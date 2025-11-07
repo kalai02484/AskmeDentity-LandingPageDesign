@@ -19,21 +19,33 @@
     />
 
     <!--Font Awsome-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    
-    
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--Swiper CSS-->
+    <link rel="stylesheet" href="Assets/package/swiper-bundle.min.css" />
+
     <style>
       body {
         font-family: "Righteous", cursive;
-      } 
+      }
     </style>
   </head>
   <body>
-
     <!--Header Section-->
-    <header x-data = "{navbarOpen: false}" class="absolute sticky left-0 top-0 w-full z-10 bg-white backdrop-blur">
+    <header
+      x-data="{navbarOpen: false}"
+      class="mx-auto sticky left-0 top-0 w-full z-10 bg-white backdrop-blur"
+    >
       <div class="mx-auto h-[90px] w-full px-2 md:px-6">
-        <div class="w-full relative h-full flex items-center justify-between border-slate-500/10">
+        <div
+          class="w-full relative h-full flex items-center justify-between border-slate-500/10"
+        >
           <!--Logo-->
           <div class="w-1/3">
             <a href="#" class="block">
@@ -46,88 +58,939 @@
           </div>
           <!--Menu items-->
           <div class="w-1/3 flex items-center justify-between mr-6">
-            <nav id="navbarCollapse" x-transition :class="!navbarOpen && 'hidden'"
-             class="absolute right-0 top-[100px] w-full sm:max-w-[350px] h-[80vh] lg:h-auto
-            rounded-lg border border-blue-200 bg-white py-5 px-6 shadow-lg shadow-blue-400/5 transition-all 
-            lg:static lg:block lg:max-w-full lg:shadow-none lg:border-none lg:bg-transparent lg:py-0 lg:px-0 flex justify-between flex-col">
-            
+            <nav
+              id="navbarCollapse"
+              x-transition
+              :class="!navbarOpen && 'hidden'"
+              class="absolute right-0 top-[100px] w-full sm:max-w-[350px] h-[80vh] lg:h-auto rounded-lg border border-blue-200 bg-white py-5 px-6 shadow-lg shadow-blue-400/5 transition-all lg:static lg:block lg:max-w-full lg:shadow-none lg:border-none lg:bg-transparent lg:py-0 lg:px-0 flex justify-between flex-col"
+            >
               <ul class="flex flex-col lg:flex-row gap-5 lg:gap-8 ml-0 lg:ml-6">
                 <li>
-                  <a href="#" class="text-lg text-gray-600 hover:text-[#4A16BD] lg:text-base duration-200">Home</a>
+                  <a
+                    href="#"
+                    class="text-lg text-gray-600 hover:text-[#4A16BD] lg:text-base duration-200"
+                    >Home</a
+                  >
                 </li>
                 <li>
-                  <a href="#" class="text-lg text-gray-600 hover:text-[#4A16BD] lg:text-base duration-200">About</a>
+                  <a
+                    href="#"
+                    class="text-lg text-gray-600 hover:text-[#4A16BD] lg:text-base duration-200"
+                    >About</a
+                  >
                 </li>
                 <li>
-                  <a href="#" class="text-lg text-gray-600 hover:text-[#4A16BD] lg:text-base duration-200">Cources</a>
+                  <a
+                    href="#"
+                    class="text-lg text-gray-600 hover:text-[#4A16BD] lg:text-base duration-200"
+                    >Cources</a
+                  >
                 </li>
                 <li>
-                  <a href="#" class="text-lg text-gray-600 hover:text-[#4A16BD] lg:text-base duration-200">Contact</a>
+                  <a
+                    href="#"
+                    class="text-lg text-gray-600 hover:text-[#4A16BD] lg:text-base duration-200"
+                    >Contact</a
+                  >
                 </li>
               </ul>
 
-          <!--menu button-->
-          <div class="flex block lg:hidden pt-4 mt-5 justify-between border-t-2 border-dashed border--gray-600">
-            <a href="#" class="rounded-md bg-none py-2 font-light text-gray-600 duration-200 hover:underline hover:text-text-[#4A16BD] lg-mr-0">Login</a>
+              <!--menu button-->
+              <div
+                class="flex block lg:hidden pt-4 mt-5 justify-between border-t-2 border-dashed border--gray-600"
+              >
+                <a
+                  href="#"
+                  class="rounded-md bg-none py-2 font-light text-gray-600 duration-200 hover:underline hover:text-text-[#4A16BD] lg-mr-0"
+                  >Login</a
+                >
 
-            <a href="#" class="rounded-md bg-gradient-to-br from-[#4A16BD] to-[#04016C] px-7 py-2 font-light text-white duration-200 hover:bg-blue-400 lg-mr-0">Signup</a>        
-          </div>
+                <a
+                  href="#"
+                  class="rounded-md bg-gradient-to-br from-[#4A16BD] to-[#04016C] px-7 py-2 font-light text-white duration-200 hover:bg-blue-400 lg-mr-0"
+                  >Signup</a
+                >
+              </div>
             </nav>
           </div>
 
           <!--menu icons-->
           <div class="flex lg:flex">
             <button class="block relative">
-              <ion-icon name="basket-outline" class="mr-5 rounded-md bg-none font-light text-gray-600 duration-200 text-2xl hover:text-text-[#4A16BD] lg-mr-0">                
+              <ion-icon
+                name="basket-outline"
+                class="mr-5 rounded-md bg-none font-light text-gray-600 duration-200 text-2xl hover:text-text-[#4A16BD] lg-mr-0"
+              >
               </ion-icon>
-              <span class="absolute
-               top-[-5px] left-[12px] bg-green-600 h-[16px] w-[16px] z-40 flex justify-center items-center rounded-full text-white text-xs">0</span>
+              <span
+                class="absolute top-[-5px] left-[12px] bg-green-600 h-[16px] w-[16px] z-40 flex justify-center items-center rounded-full text-white text-xs"
+                >0</span
+              >
             </button>
             <button class="block">
-              <ion-icon name="person-circle-outline" class="mr-5 rounded-md bg-none font-light text-gray-600 duration-200 text-2xl hover:text-text-[#4A16BD]  lg-mr-0"></ion-icon>
+              <ion-icon
+                name="person-circle-outline"
+                class="mr-5 rounded-md bg-none font-light text-gray-600 duration-200 text-2xl hover:text-text-[#4A16BD] lg-mr-0"
+              ></ion-icon>
             </button>
             <button class="block">
-              <ion-icon name="search-outline" class="mr-5 rounded-md bg-none font-light text-gray-600 duration-200 text-2xl hover:text-text-[#4A16BD] lg-mr-0"></ion-icon>
+              <ion-icon
+                name="search-outline"
+                class="mr-5 rounded-md bg-none font-light text-gray-600 duration-200 text-2xl hover:text-text-[#4A16BD] lg-mr-0"
+              ></ion-icon>
             </button>
           </div>
 
           <!--menu button-->
           <div class="flex">
-            <a href="#" class="mr-5 hidden rounded-md bg-none px-7 py-2 font-light text-gray-600 duration-200 hover:underline hover:text-text-[#4A16BD] lg:block lg-mr-0">Login</a>
+            <a
+              href="#"
+              class="mr-5 hidden rounded-md bg-none px-3 py-2 font-light text-gray-600 duration-200 hover:underline hover:text-text-[#4A16BD] lg:block lg-mr-0"
+              >Login</a
+            >
 
-            <a href="#" class="mr-10 hidden rounded-md bg-gradient-to-br from-[#4A16BD] to-[#04016C] px-7 py-2 font-light text-white duration-200 hover:bg-blue-400 lg:block lg-mr-0">Signup</a>
-            
-            <button @click="navbarOpen = !navbarOpen" class="block lg:hidden text-blue-800 text-2xl focus:outline-none">
-              <i :class="navbarOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"></i>
+            <a
+              href="#"
+              class="mr-10 hidden rounded-md bg-gradient-to-br from-[#4A16BD] to-[#04016C] px-7 py-2 font-light text-white duration-200 hover:bg-blue-400 lg:block lg-mr-0"
+              >Signup</a
+            >
+
+            <button
+              @click="navbarOpen = !navbarOpen"
+              class="block lg:hidden text-blue-800 text-2xl focus:outline-none"
+            >
+              <i
+                :class="navbarOpen ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'"
+              ></i>
             </button>
           </div>
         </div>
       </div>
     </header>
 
-
-
     <!--Hero Section-->
-    <section class="bg-gradient-to-tr from-[#4A16BD] to-[#04016C] h-screen w-full">
-      <div class="container mx-auto px-4 py-4">
-        <div class="col-6">
-          <h1 class="text-white text-5xl font-bold">
-            Welcome to AskmeDentity
+    <section
+      class="bg-gradient-to-tr from-[#4A16BD] to-[#04016C] w-full relative before:absolute before:inset-0 before:bg-[url('')] before:bg-cover before:bg-center before:opacity-40 before:left-48 before:h-[100px]"
+    >
+      <div class="mx-auto w-full px-2 md:px-[50px] lg:px-[75px]">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          
+          <div class="p-5 pt-[100px] md:pt-[120px]">
+            <p
+              class="text-[#ffffffc9] tracking-[1px] md:tracking-[3px] text-[10px] md:text-xs mb-3 uppercase"
+            >
+              Successful coaches are visionaries
+            </p>
+            <h1
+              class="text-white text-3xl md:text-6xl tracking-wider leading-[1.3] mb-3"
+            >
+              Good <span class="text-[#0094E7]">coaching</span> is <br />good
+              teaching & <br />nothing else.
+            </h1>
+            <div class="flex items-center">
+              <a
+                href="#"
+                class="mr-3 rounded-md bg-none px-4 py-2 text-stone-200 border-1 text-xs"
+                >view Courses</a
+              >
+              <a href="#" class="rounded-md text-stone-200 text-xs"
+                >Get Free Consultation</a
+              >
+            </div>
+            <div class="mt-5">
+              <form class="bg-stone-100 max:w-[250px] flex py-2 rounded-md justify-around pl-3 pr-2 gap-2">
+                <input 
+                class="text-[10px] w-full focus:outline-none"
+                  type="text"
+                  placeholder="What do you want to learn?"
+                />
+                <button class="rounded-md bg-gradient-to-br from-[#4A16BD] to-[#04016C] px-3 py-2 text-white duration-200 flex gap-1 items-end justify-center text-xs">
+                  <ion-icon
+                    name="search-outline"
+                    class="mb-[2px]"
+                  ></ion-icon>search
+                </button>
+              </form>
+            </div>
+          </div>
+          
+          <div class="p-5 pt-[20px]">
+            <div class="rating pl-5 border-l-1 border-[#0094E7] border-dashed relative after:content-['``'] after:absolute after:top-1/2 after:-left-3 after:-translate-y-1/2 after:text-xl after:text-gray-100  after:bg-[#0094E7] after:w-[20px] after:h-[20px] after:rounded-full after:flex after:item-center after:justify-center tracking-wider">
+              <h6 class="text-stone-100 text-xs mb-3">Shyam</h6>
+              <p class="text-stone-100 text-[10px] leading-[1.5] w-40 mb-3">In a coaching role, you ask the questions and rely more on your 
+staff, who become the experts, to provide the information.</p>
+<p class="text-[10px] text-[#0094E7]">4.9</p>
+            </div>
+            <div class="mt-[-100px]">
+              <img src="Assets/brunette-woman-hugging-laptop.png"/>
+            </div>            
+          </div>
+        </div>
+      </div>
+    </section> 
+    <!--Hero section ends-->
+
+    <!--Logo Sponsers starts-->
+    <section
+      class="bg-gradient-to-b from-[#2E08C7] to-[#7E08C7] w-full relative px-8 lg:px-20"
+    >
+      <!-- Slider main container -->
+      <div class="swiper blog-swiper container @7xl">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper blog-slider">
+          <!-- Slides -->
+
+          <div class="swiper-slide !flex justify-center items-center">
+            <div class="flex justify-center items-center w-36 h-24">
+              <img class="w-20 lg:w-24" src="Assets/spotify.svg" alt="logo 1" />
+            </div>
+          </div>
+          <div class="swiper-slide !flex justify-center items-center">
+            <div class="flex justify-center items-center w-36 h-24">
+              <img class="w-20 lg:w-24" src="Assets/amazon.svg" alt="logo 1" />
+            </div>
+          </div>
+          <div class="swiper-slide !flex justify-center items-center">
+            <div class="flex justify-center items-center w-36 h-24">
+              <img class="w-20 lg:w-24" src="Assets/cisco.svg" alt="logo 1" />
+            </div>
+          </div>
+          <div class="swiper-slide !flex justify-center items-center">
+            <div class="flex justify-center items-center w-36 h-24">
+              <img class="w-20 lg:w-24" src="Assets/spotify.svg" alt="logo 1" />
+            </div>
+          </div>
+          <div class="swiper-slide !flex justify-center items-center">
+            <div class="flex justify-center items-center w-36 h-24">
+              <img
+                class="w-20 lg:w-24"
+                src="Assets/logitech.svg"
+                alt="logo 1"
+              />
+            </div>
+          </div>
+          <div class="swiper-slide !flex justify-center items-center">
+            <div class="flex justify-center items-center w-36 h-24">
+              <img class="w-20 lg:w-24" src="Assets/amazon.svg" alt="logo 1" />
+            </div>
+          </div>
         </div>
       </div>
     </section>
+    <!--Logo Sponsers ends-->
+
+    <!--Featured Course section starts-->
+    <section
+      class="bg-gradient-to-t from-[#D9ECFF] to-[#F0F3FF] w-full relative px-8 lg:px-20 py-20"
+    >
+      <div class="container @7xl mx-auto">
+        <div class="text-center">
+          <h3 class="text-2xl sm:text-3xl md:text-4xl mb-2">
+            Featured <span class="text-[#4883FF]">Course</span>
+          </h3>
+          <p
+            class="uppercase text-[10px] md:text-sm md:mt-4 tracking-widest leading-4 text-[#000000]"
+          >
+            The feature courses are we invented our teaching part
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md;grid-cols-3 lg:grid-cols-3 gap-7 md:gap-8 mt-10 md:px-10"
+        >
+          <div
+            class="flex flex-col p-0 rounded-3xl shadow-md overflow-hidden bg-slate-50"
+          >
+            <div class="w-full">
+              <img class="w-full" src="Assets/course1.svg" alt="Course 1" />
+            </div>
+            <div class="px-5 pt-7 pb-5">
+              <div class="flex justify-between items-center mb-6">
+                <span class="text-xs text-[#4E596B]">1,957 Students</span>
+                <span class="text-xs text-[#4E596B]">01h 59m</span>
+              </div>
+              <h3 class="text-[#324361] mb-6 h-[45px]">
+                Motion Graphics: Create a Nice Typography Animation
+              </h3>
+              <div class="flex justify-between items-center">
+                <span class="text-xs text-[#4E596B]">Rs.499</span>
+                <span class="text-xs text-[#4E596B]">
+                  <ion-icon name="cart-outline" class="text-xl"></ion-icon>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col p-0 rounded-3xl shadow-md overflow-hidden bg-slate-50"
+          >
+            <div class="w-full">
+              <img class="w-full" src="Assets/course2.svg" alt="Course 1" />
+            </div>
+            <div class="px-5 pt-7 pb-5">
+              <div class="flex justify-between items-center mb-6">
+                <span class="text-xs text-[#4E596B]">9,575 Students</span>
+                <span class="text-xs text-[#4E596B]">01h 59m</span>
+              </div>
+              <h3 class="text-[#324361] mb-6 h-[45px]">
+                Advance PHP knowledge with JS to make smart web
+              </h3>
+              <div class="flex justify-between items-center">
+                <span class="text-xs text-[#4E596B]">Rs.499</span>
+                <span class="text-xs text-[#4E596B]">
+                  <ion-icon name="cart-outline" class="text-xl"></ion-icon>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col p-0 rounded-3xl shadow-md overflow-hidden bg-slate-50"
+          >
+            <div class="w-full">
+              <img class="w-full" src="Assets/course3.svg" alt="Course 1" />
+            </div>
+            <div class="px-5 pt-7 pb-5">
+              <div class="flex justify-between items-center mb-6">
+                <span class="text-xs text-[#4E596B]">2,957 Students</span>
+                <span class="text-xs text-[#4E596B]">02h 49m</span>
+              </div>
+              <h3 class="text-[#324361] mb-6 h-[45px]">
+                Education Software and PHP and JS System Script
+              </h3>
+              <div class="flex justify-between items-center">
+                <span class="text-xs text-[#4E596B]">Rs.499</span>
+                <span class="text-xs text-[#4E596B]">
+                  <ion-icon name="cart-outline" class="text-xl"></ion-icon>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col p-0 rounded-3xl shadow-md overflow-hidden bg-slate-50"
+          >
+            <div class="w-full">
+              <img class="w-full" src="Assets/course4.svg" alt="Course 1" />
+            </div>
+            <div class="px-5 pt-7 pb-5">
+              <div class="flex justify-between items-center mb-6">
+                <span class="text-xs text-[#4E596B]">5,457 Students</span>
+                <span class="text-xs text-[#4E596B]">01h 49m</span>
+              </div>
+              <h3 class="text-[#324361] mb-6 h-[45px]">
+                The Complete Financial Analyst Training & Investing
+              </h3>
+              <div class="flex justify-between items-center">
+                <span class="text-xs text-[#4E596B]">Rs.499</span>
+                <span class="text-xs text-[#4E596B]">
+                  <ion-icon name="cart-outline" class="text-xl"></ion-icon>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col p-0 rounded-3xl shadow-md overflow-hidden bg-slate-50"
+          >
+            <div class="w-full">
+              <img class="w-full" src="Assets/course5.svg" alt="Course 1" />
+            </div>
+            <div class="px-5 pt-7 pb-5">
+              <div class="flex justify-between items-center mb-6">
+                <span class="text-xs text-[#4E596B]">595 Students</span>
+                <span class="text-xs text-[#4E596B]">01h 49m</span>
+              </div>
+              <h3 class="text-[#324361] mb-6 h-[45px]">
+                Marketing 2023: Complete Guide To Instagram Growth
+              </h3>
+              <div class="flex justify-between items-center">
+                <span class="text-xs text-[#4E596B]">Rs.499</span>
+                <span class="text-xs text-[#4E596B]">
+                  <ion-icon name="cart-outline" class="text-xl"></ion-icon>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-col p-0 rounded-3xl shadow-md overflow-hidden bg-slate-50"
+          >
+            <div class="w-full">
+              <img class="w-full" src="Assets/course6.svg" alt="Course 1" />
+            </div>
+            <div class="px-5 pt-7 pb-5">
+              <div class="flex justify-between items-center mb-6">
+                <span class="text-xs text-[#4E596B]">458 Students</span>
+                <span class="text-xs text-[#4E596B]">03h 00m</span>
+              </div>
+              <h3 class="text-[#324361] mb-6 h-[45px]">
+                Learn 3D Modelling and Design for Beginners
+              </h3>
+              <div class="flex justify-between items-center">
+                <span class="text-xs text-[#4E596B]">Rs.499</span>
+                <span class="text-xs text-[#4E596B]">
+                  <ion-icon name="cart-outline" class="text-xl"></ion-icon>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center mt-10">
+          <button
+            href="#"
+            class="rounded-md bg-gradient-to-br from-[#4A16BD] to-[#04016C] px-7 py-2 font-light text-white duration-200 hover:bg-blue-400 shadow-md"
+            >Explore Cources</button
+          >
+        </div>
+      </div>
+    </section>
+    <!--Featured Course section ends-->
+
+
+
+    <!--Learn Course section starts-->
+    <section
+      class="bg-gradient-to-r from-[#739FE8] to-[#4F18CA] w-full relative px-8 lg:px-32 pt-20 pb-5"
+    >
+      <div class="container @7xl mx-auto">
+        <div class="text-center">
+          <h3 class="text-2xl sm:text-3xl md:text-4xl mb-2 text-slate-50">
+            Why <span class="text-[#4883FF]">learn</span> with our courses?
+          </h3>
+          <p
+            class="text-[13px] md:text-sm md:mt-4 tracking-widest leading-4 text-slate-50"
+          >
+            We are providing the best courses and top classes.And extradinery placement training.....
+          </p>
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-center items-center text-white p-8 mt-4 sm:mt-10 md:mt-16">
+          <!-- Box 1 -->
+          <div class="relative flex-1 text-center sm:p-4 lg:py-2 py-10
+            before:content-[''] before:absolute before:w-full before:h-[2px] before:bottom-0 before:left-0 
+            before:bg-[repeating-linear-gradient(to_right,rgba(255,255,255,1)_0_4px,transparent_4px_8px)]
+            before:[mask-image:linear-gradient(to_right,transparent,white,transparent)]
+            before:opacity-80
+            sm:before:w-[2px] sm:before:h-full sm:before:bottom-auto sm:before:top-0 sm:before:right-0 sm:before:left-auto 
+            sm:before:bg-[repeating-linear-gradient(to_bottom,rgba(255,255,255,1)_0_4px,transparent_4px_8px)]
+            sm:before:[mask-image:linear-gradient(to_bottom,white,transparent)]
+          ">
+            <img class="mb-6 mx-auto w-16" src="Assets/learnIcon1.svg" alt="icon 1" />
+            <h3 class="mb-4">01. Learn</h3>
+            <p class="text-[13px] h-[70px]">Learn continually. There is always
+        “one more thing”to learn.</p>
+          </div>
+
+          <!-- Box 2 -->
+          <div class="relative flex-1 text-center sm:p-4 lg:py-2 py-10
+            before:content-[''] before:absolute before:w-full before:h-[2px] before:bottom-0 before:left-0 
+            before:bg-[repeating-linear-gradient(to_right,rgba(255,255,255,1)_0_4px,transparent_4px_8px)]
+            before:[mask-image:linear-gradient(to_right,transparent,white,transparent)]
+            before:opacity-80
+            sm:before:w-[2px] sm:before:h-full sm:before:bottom-auto sm:before:top-0 sm:before:right-0 sm:before:left-auto 
+            sm:before:bg-[repeating-linear-gradient(to_bottom,rgba(255,255,255,1)_0_4px,transparent_4px_8px)]
+            sm:before:[mask-image:linear-gradient(to_bottom,white,transparent)]
+          ">
+            <img class="mb-6 mx-auto w-16" src="Assets/learnIcon2.svg" alt="icon 2" />
+            <h3 class="mb-4">02. Graduate</h3>
+            <p class="text-[13px] h-[70px]">Be bold,be courageous,
+        be your best.</p>
+          </div>
+
+          <!-- Box 3 -->
+          <div class="relative flex-1 text-center sm:p-4 lg:py-2 py-10">
+            <img class="mb-6 mx-auto w-16" src="Assets/learnIcon3.svg" alt="icon 3" />
+            <h3 class="mb-4">03. Work</h3>
+            <p class="text-[13px] h-[70px]">Great companies are built in
+        the office,with hard work put
+        in by team.</p>
+          </div>
+        </div>
+</div>
+</section>
+    <!--Learn Course section ends-->
+
+    <!--Top Categories section starts-->
+    <section
+      class="bg-gradient-to-t from-[#D9ECFF] to-[#F0F3FF] w-full relative px-8 lg:px-20 py-20"
+    >
+      <div class="container @7xl mx-auto">
+        <div class="text-center">
+          <h3 class="text-2xl sm:text-3xl md:text-4xl mb-2">
+            Top <span class="text-[#4883FF]">Categories</span>
+          </h3>
+          <p
+            class="text-[10px] md:text-sm md:mt-4 tracking-widest leading-4 text-[#000000]"
+          >
+            100+ unique online course list designs
+          </p>
+        </div>
+
+        <div
+          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 md:gap-5 mt-10 md:px-10"
+        >
+          <div
+            class="flex flex-row md:flex-col p-3 md:p-5 md:py-10 rounded-md md:rounded-3xl shadow-md overflow-hidden bg-slate-50 md:justify-center md:items-center md:text-center"
+          >
+            <div class="p-5 bg-[#DF385B] rounded-md md:mb-10">
+              <img class="w-10" src="Assets/Icon1.svg" alt="Icon 1" />
+            </div>
+            <div class="md:text-center pl-4 md:pl-0">
+                <h3 class="text-[#324361] md:mb-4">
+                Digtal  <br/>Marketing
+            </h3>
+            <a href="" class="text-xs text-[#4E596B]">25 Courses</a>
+            </div>
+            
+          </div>
+
+          
+
+          <div
+            class="flex flex-row md:flex-col p-3 md:p-5 md:py-10 rounded-md md:rounded-3xl shadow-md overflow-hidden bg-slate-50 md:justify-center md:items-center md:text-center"
+          >
+            <div class="p-5 bg-[#5AB48E] rounded-md md:mb-10">
+              <img class="w-10" src="Assets/Icon2.svg" alt="Icon 2" />
+            </div>
+            <div class="md:text-center pl-4 md:pl-0">
+                <h3 class="text-[#324361] md:mb-4">
+                Web <br/>Development
+            </h3>
+            <a href="" class="text-xs text-[#4E596B]">16 Courses</a>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-row md:flex-col p-3 md:p-5 md:py-10 rounded-md md:rounded-3xl shadow-md overflow-hidden bg-slate-50 md:justify-center md:items-center md:text-center"
+          >
+            <div class="p-5 bg-[#7F56D9] rounded-md md:mb-10">
+              <img class="w-10" src="Assets/Icon3.svg" alt="Icon 3" />
+            </div>
+            <div class="md:text-center pl-4 md:pl-0">
+                <h3 class="text-[#324361] md:mb-4">
+               Art & <br/> Humanities
+            </h3>
+            <a href="" class="text-xs text-[#4E596B]">76 Courses</a>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-row md:flex-col p-3 md:p-5 md:py-10 rounded-md md:rounded-3xl shadow-md overflow-hidden bg-slate-50 md:justify-center md:items-center md:text-center"
+          >
+            <div class="p-5 bg-[#FAB437] rounded-md md:mb-10">
+              <img class="w-10" src="Assets/Icon4.svg" alt="Icon 4" />
+            </div>
+            <div class="md:text-center pl-4 md:pl-0">
+                <h3 class="text-[#324361] md:mb-4">
+               Personal <br/>Development
+            </h3>
+            <a href="" class="text-xs text-[#4E596B]">22 Courses</a>
+            </div>
+          </div>
+
+          <div
+            class="flex flex-row md:flex-col p-3 md:p-5 md:py-10 rounded-md md:rounded-3xl shadow-md overflow-hidden bg-slate-50 md:justify-center md:items-center md:text-center"
+          >
+            <div class="p-5 bg-[#2AAA94] rounded-md md:mb-10">
+              <img class="w-10" src="Assets/Icon5.svg" alt="Icon 5" />
+            </div>
+            <div class="md:text-center pl-4 md:pl-0">
+                <h3 class="text-[#324361] md:mb-4">
+               IT and <br/>Software
+            </h3>
+            <a href="" class="text-xs text-[#4E596B]">110 Courses</a>
+            </div>
+          </div>
+
+
+          <div
+            class="flex flex-row md:flex-col p-3 md:p-5 md:py-10 rounded-md md:rounded-3xl shadow-md overflow-hidden bg-slate-50 md:justify-center md:items-center md:text-center"
+          >
+            <div class="p-5 bg-[#2CD182] rounded-md md:mb-10">
+              <img class="w-10" src="Assets/Icon6.svg" alt="Icon 6" />
+            </div>
+            <div class="md:text-center pl-4 md:pl-0">
+                <h3 class="text-[#324361] md:mb-4">
+               Graphic <br/>Design
+            </h3>
+            <a href="" class="text-xs text-[#4E596B]">85 Courses</a>
+            </div>
+          </div>        
+
+      </div>
+    </section>
+    <!--Top Categories section ends-->
+
+    <!--Subscribe and Testimonials section starts-->
+    <section
+      class="bg-gradient-to-t from-[#D9ECFF] to-[#F0F3FF] w-full relative px-8 lg:px-20 py-20"
+    >
       
+    
+    <div class="container @7xl mx-auto md:px-10 lg:px-36">
+        <div class="text-center px-5 py-12 bg-gradient-to-l from-[#E100FF] to-[#00B3FF] rounded-xl">
+          <h3 class="text-lg sm:text-3xl mb-3 text-slate-50">
+            Subscribe For Get Update 
+            <br/>Every New Courses
+          </h3>
+          <p
+            class="text-[10px] mb-7 md:text-sm md:mt-4 tracking-widest leading-4 text-slate-50"
+          >
+            20k+ students daily learn with Eduvi. Subscribe for new courses.
+          </p>
+          <div class="w-full sm:max-w-[300px] md:max-w-[350px] mx-auto flex flex-nowrap bg-[#ffffff33] bg-blend-overlay rounded-sm overflow-hidden shadow-sm">
+            <input type="email" placeholder="enter your email"  class="w-full p-3 text-xs focus:outline-none text-white" required/>
+            <a type="submit" class="bg-[#0E38CD] p-3 text-white text-xs cursor-pointer">Subscribe</a>
+          </div>
+        </div>
+
+
+        <!--Video Player Starts-->
+        <div class="mx-auto relative w-full max-w-3xl aspect-video rounded-2xl overflow-hidden shadow-lg bg-gray-800 group mt-20">
+    <!-- Thumbnail -->
+    <img
+      src="https://img.youtube.com/vi/-c552FHJbrM/hqdefault.jpg"
+      alt="Video thumbnail"
+      class="absolute inset-0 w-full h-full object-cover brightness-75 group-hover:brightness-50 transition"
+    />
+
+    <!-- Custom Play Button -->
+    <button
+      onclick="this.parentNode.innerHTML='<iframe class=&quot;absolute inset-0 w-full h-full&quot; src=&quot;https://www.youtube.com/embed/-c552FHJbrM?si=IT49BbKHTssZDBRp&autoplay=1&controls=0&quot; frameborder=&quot;0&quot; allow=&quot;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share&quot; referrerpolicy=&quot;strict-origin-when-cross-origin&quot; allowfullscreen></iframe>'"
+      class="absolute inset-0 flex items-center justify-center"
+    >
+      <div class="w-32 h-32 bg-white/20 backdrop-blur-md border border-white/40 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-110">
+        <div class="w-25 h-25 bg-white/40 backdrop-blur-md border border-white/40 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+          <div class="w-18 h-18 bg-gradient-to-r from-[#00F260] to-[#0575E6] border-white/40 rounded-full flex items-center justify-center transition-transform duration-300 group-hover:scale-105">
+            <svg class="w-10 h-10 text-white fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+          </div> 
+        </div>       
+      </div>
+    </button>
+  </div>
+        <!--Video Player Ends-->
+
+
+        <!--Testimonial block starts-->
+
+        <!-- Slider main container -->
+      <div class="swiper testimonial-swiper container @7xl mt-20">
+        <!-- Additional required wrapper -->
+        <div class="swiper-wrapper blog-slider">
+          <!-- Slides -->
+
+          <div class="swiper-slide !flex justify-center items-center pt-10">
+            <div class="bg-slate-50 p-5 pt-7 shadow-md relative">
+              <img src="Assets/avatar.svg" alt="Avatar" class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-13 h-13 z-10"/>
+              <p class="text-[#7E7EAA] text-sm leading-6">
+                Such an amazing traniner and easily understand the entire 
+syllabus, and the guidence will be super and good to the way of explaning.
+              </p>
+              <div class="flex items-center mt-3">
+                <span class="text-yellow-500">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide !flex justify-center items-center pt-10">
+            <div class="bg-slate-50 p-5 pt-7 shadow-md relative">
+              <img src="Assets/avatar.svg" alt="Avatar" class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-13 h-13 z-10"/>
+              <p class="text-[#7E7EAA] text-sm leading-6">
+                Such an amazing traniner and easily understand the entire 
+syllabus, and the guidence will be super and good to the way of explaning.
+              </p>
+              <div class="flex items-center mt-3">
+                <span class="text-yellow-500">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide !flex justify-center items-center pt-10">
+            <div class="bg-slate-50 p-5 pt-7 shadow-md relative">
+              <img src="Assets/avatar.svg" alt="Avatar" class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-13 h-13 z-10"/>
+              <p class="text-[#7E7EAA] text-sm leading-6">
+                Such an amazing traniner and easily understand the entire 
+syllabus, and the guidence will be super and good to the way of explaning.
+              </p>
+              <div class="flex items-center mt-3">
+                <span class="text-yellow-500">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide !flex justify-center items-center pt-10">
+            <div class="bg-slate-50 p-5 pt-7 shadow-md relative">
+              <img src="Assets/avatar.svg" alt="Avatar" class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-13 h-13 z-10"/>
+              <p class="text-[#7E7EAA] text-sm leading-6">
+                Such an amazing traniner and easily understand the entire 
+syllabus, and the guidence will be super and good to the way of explaning.
+              </p>
+              <div class="flex items-center mt-3">
+                <span class="text-yellow-500">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide !flex justify-center items-center pt-10">
+            <div class="bg-slate-50 p-5 pt-7 shadow-md relative">
+              <img src="Assets/avatar.svg" alt="Avatar" class="absolute left-1/2 top-0 -translate-x-1/2 -translate-y-1/2 w-13 h-13 z-10"/>
+              <p class="text-[#7E7EAA] text-sm leading-6">
+                Such an amazing traniner and easily understand the entire 
+syllabus, and the guidence will be super and good to the way of explaning.
+              </p>
+              <div class="flex items-center mt-3">
+                <span class="text-yellow-500">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="far fa-star"></i>
+                </span>
+              </div>
+            </div>
+          </div>
 
 
 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+        </div>
+      </div>
+      <!--Testimonial block starts-->
+
+    </section>
+    <!--Subscribe and Testimonials section ends-->
+
+
+    <!--Footer Area Starts-->
+    <footer class="bg-gradient-to-r from-[#931BBD] to-[#477AE3]">
+      <div class="container mx-auto p-0 md:p-8 xl:px-0">
+          <div class="mx-auto max-w-7xl px-6 pb-10 pt-16">
+              <div class="xl:grid xl:grid-cols-3 xl:gap-8">
+                  <div class="space-y-4">
+                    <h3 class="text-lg font-semibold leading-6">Connect</h3>
+                      <div>
+                          <a href="/">
+                              <div class="flex items-center space-x-2 text-2xl font-medium">
+                                  <span>
+                                      <img class="logo max-w-[200px]" src="Assets/Askmeidentity_2.png" />
+                                  </span>
+                              </div>
+
+                          </a>
+                      </div>
+                      <div class="max-w-md pr-16 text-md">Sri Jagannath Nivas,8-1-164/345/A/1, Pragati Colony, Mailardevpally, Nawab Saheb Kunta, Hyd, 500005
+                      </div>
+                  </div>
+                  <div class="mt-16 grid grid-cols-1 sm:grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
+                      <div class="md:grid md:grid-cols-2 md:gap-8">
+                          <div>
+                              <h3 class="text-lg font-semibold leading-6">Classes</h3>
+                              <ul role="list" class="mt-6 space-y-4"> 
+                                  <li>
+                                      <a href="/"
+                                          class="text-md leading-6 hover:text-yellow-500">Classroom courses
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="/"
+                                          class="text-md leading-6 hover:text-yellow-500">Virtual classroom courses
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="/"
+                                          class="text-md leading-6 hover:text-yellow-500">E-learning courses
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="/"
+                                          class="text-md leading-6 hover:text-yellow-500">Video Courses
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="/"
+                                          class="text-md leading-6 hover:text-yellow-500">Offline Courses
+                                      </a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="mt-10 md:mt-0">
+                              <h3 class="text-md font-semibold leading-6">Community</h3>
+                              <ul role="list" class="mt-6 space-y-4">
+                                  <li>
+                                      <a href="/"
+                                          class="text-md leading-6 hover:text-yellow-500">Learners
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="/"
+                                          class="text-md leading-6 hover:text-yellow-500">Parteners
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="/"
+                                          class="text-md leading-6 hover:text-yellow-500">Developers
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="/"
+                                          class="text-md leading-6 hover:text-yellow-500">Transactions
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="/"
+                                          class="text-md leading-6 hover:text-yellow-500">Blog
+                                      </a>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="md:grid md:grid-cols-2 md:gap-8">
+                          <div>
+                              <h3 class="text-md font-semibold leading-6">Quick links</h3>
+                              <ul role="list" class="mt-6 space-y-4">
+                                  <li>
+                                      <a href="/"
+                                          class="text-md leading-6 hover:text-yellow-500">Home
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="/" class="text-md leading-6 hover:text-yellow-500">Professional Education
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="/"
+                                          class="text-md leading-6 hover:text-yellow-500">Courses
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="/" class="text-md leading-6 hover:text-yellow-500">Admissions
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="/"
+                                          class="text-md leading-6 hover:text-yellow-500">Testimonial
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="/"
+                                          class="text-md leading-6 hover:text-yellow-500">Programs
+                                      </a>
+                                  </li>
+                              </ul>
+                          </div>
+                          <div class="mt-10 md:mt-0">
+                              <h3 class="text-lg font-semibold leading-6">More</h3>
+                              <ul role="list" class="mt-6 space-y-4">
+                                  <li>
+                                      <a href="/"
+                                          class="text-md leading-6 hover:text-yellow-500">Press
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="/"
+                                          class="text-md leading-6 hover:text-yellow-500">Investors
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="/"
+                                          class="text-md leading-6 hover:text-yellow-500">Terms
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="/"
+                                          class="text-md leading-6 hover:text-yellow-500">Privacy
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="/"
+                                          class="text-md leading-6 hover:text-yellow-500">Help
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="/"
+                                          class="text-md leading-6 hover:text-yellow-500">Contact
+                                      </a>
+                                  </li>
+                              </ul>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="bg-gradient-to-b from-[#0351AE] to-[#4266c8]">
+          <div class="container mx-auto px-6 py-5">
+              <div class="icons flex gap-3 mx-auto justify-center mb-4">
+                <a href="#" class="bg-white h-10 w-10 flex justify-center items-center rounded-full text-2xl mr-4 hover:text-yellow-500">
+                  <ion-icon name="logo-twitter"></ion-icon>
+                </a>
+                <a href="#" class="bg-white h-10 w-10 flex justify-center items-center rounded-full text-2xl mr-4 hover:text-yellow-500">
+                  <ion-icon name="logo-whatsapp"></ion-icon>
+                </a>
+                <a href="#" class="bg-white h-10 w-10 flex justify-center items-center rounded-full text-2xl mr-4 hover:text-yellow-500">
+                  <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+                <a href="#" class="bg-white h-10 w-10 flex justify-center items-center rounded-full text-2xl mr-4 hover:text-yellow-500">
+                  <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+                <a href="#" class="bg-white h-10 w-10 flex justify-center items-center rounded-full text-2xl mr-4 hover:text-yellow-500">
+                  <ion-icon name="logo-youtube"></ion-icon>
+                </a>
+              </div>
+              <p class="text-center text-sm text-white">Copyright &copy; askmeidentity. All Rights Reserved</p>
+          </div>
+      </div>
+    </footer>
+    <!--Footer Area Starts-->
+    
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
 
     <!--Tailwind CSS CDN-->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <!-- Alpine.js CDN -->
-    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script
+      defer
+      src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"
+    ></script>
 
-
+    <!-- Swiper JS -->
+    <script src="Assets/package/swiper-bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
   </body>
 </html>
