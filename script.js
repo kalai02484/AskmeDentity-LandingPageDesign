@@ -5,10 +5,6 @@ var swiper = new Swiper(".blog-swiper", {
   autoplay: {
     delay: 5000,
   },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
   breakpoints: {
     640: {
       slidesPerView: 4,
@@ -30,14 +26,14 @@ var swiper = new Swiper(".blog-swiper", {
 var swiper = new Swiper(".testimonial-swiper", {
   effect: "coverflow",
   centeredSlides: true,
-  spaceBetween: 30,
+  slidesPerView: 1,
   coverflowEffect: {
-    rotate: 0,
-    stretch: 0,
-    depth: 100,
-    modifier: 0,
-    slideShadows: false
-  },
+        rotate: 0,
+        stretch: 0,
+        depth: 150,
+        modifier: 1,
+        slideShadows: false,
+      },
   loop: true,
   navigation: {
     nextEl: ".swiper-button-next",
