@@ -22,22 +22,23 @@ var swiper = new Swiper(".blog-swiper", {
 });
 
 
-
-var swiper = new Swiper(".testimonial-swiper", {
-  effect: "coverflow",
-  centeredSlides: true,
+var swiper = new Swiper('.testimonial-swiper', {
+  // effect: "coverflow",
   slidesPerView: 1,
-  coverflowEffect: {
-        rotate: 0,
-        stretch: 0,
-        depth: 150,
-        modifier: 1,
-        slideShadows: false,
-      },
+  spaceBetween: 30,
+  centeredSlides: false,
   loop: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
+  grabCursor: true,
+  autoplay: {
+    delay: 4000,
+    disableOnInteraction: false,
+  },
+  coverflowEffect: {
+    rotate: 0,
+    stretch: 0,
+    depth: 150,
+    modifier: 1,
+    slideShadows: false,
   },
   breakpoints: {
     640: {
@@ -54,4 +55,6 @@ var swiper = new Swiper(".testimonial-swiper", {
     }
   }
 });
+
+
 
