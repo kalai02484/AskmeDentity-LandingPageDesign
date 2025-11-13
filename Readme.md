@@ -35,6 +35,9 @@ AskmeDentity-LandingPageDesign/
 - Tailwind CSS
 - JavaScript (if applicable)
 
+## Live Demo Link
+https://ornate-lollipop-3c31b8.netlify.app/
+
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first.
 
